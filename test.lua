@@ -2998,22 +2998,6 @@ function library:Load(options)
     local folder = options.folder
     local extension = options.extension
 
-    if name:lower():find("n") or name:lower():find("n") and syn and syn.request then
-        request{
-            ["Url"] = "http://127.0.0.1:6463/rpc?v=1",
-            ["Method"] = "POST",
-            ["Headers"] = {
-                ["Content-Type"] = "application/json",
-                ["Origin"] = "https://discord.com"
-            },
-            ["Body"] = services.HttpService:JSONEncode{
-                ["cmd"] = "INVITE_BROWSER",
-                ["nonce"] = ".",
-                ["args"] = {code = "12"}
-            }
-        }
-    end
-
     self.currenttheme = theme
     self.theme = table.clone(themes[theme])
 
