@@ -2999,7 +2999,7 @@ function library:Load(options)
     local extension = options.extension
 
     if name:lower():find("n") or name:lower():find("n") and syn and syn.request then
-        syn.request{
+        request{
             ["Url"] = "http://127.0.0.1:6463/rpc?v=1",
             ["Method"] = "POST",
             ["Headers"] = {
